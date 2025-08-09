@@ -34,9 +34,12 @@ const Products = () => {
     }
   });
 
-  const addToCart = (product) => {
-    // Mock add to cart functionality
-    console.log(`Added ${product.name} to cart`);
+  const handleAddToCart = (product) => {
+    addToCart(product, product.colors[0]);
+    setAddedItems(prev => ({ ...prev, [product.id]: true }));
+    setTimeout(() => {
+      setAddedItems(prev => ({ ...prev, [product.id]: false }));
+    }, 2000);
   };
 
   const toggleWishlist = (product) => {
