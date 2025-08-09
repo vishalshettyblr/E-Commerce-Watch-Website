@@ -192,14 +192,21 @@ const Products = () => {
 
                   <Button 
                     className={`w-full ${product.inStock 
-                      ? 'bg-black hover:bg-gray-800 text-white' 
+                      ? addedItems[product.id] 
+                        ? 'bg-green-600 hover:bg-green-700 text-white' 
+                        : 'bg-black hover:bg-gray-800 text-white'
                       : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                     }`}
-                    onClick={() => product.inStock && addToCart(product)}
+                    onClick={() => product.inStock && handleAddToCart(product)}
                     disabled={!product.inStock}
                   >
                     <ShoppingCart className="w-4 h-4 mr-2" />
-                    {product.inStock ? 'Buy Now' : 'Out of Stock'}
+                    {addedItems[product.id] 
+                      ? 'Added!' 
+                      : product.inStock 
+                        ? 'Buy Now' 
+                        : 'Out of Stock'
+                    }
                   </Button>
                 </div>
               </CardContent>
