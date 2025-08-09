@@ -98,11 +98,13 @@ const Products = () => {
             <Card key={product.id} className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg bg-white">
               <CardContent className="p-0">
                 <div className="relative overflow-hidden rounded-t-lg">
-                  <img 
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                  <Link to={`/product/${product.id}`}>
+                    <img 
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </Link>
                   
                   {/* Badges */}
                   <div className="absolute top-4 left-4 space-y-2">
