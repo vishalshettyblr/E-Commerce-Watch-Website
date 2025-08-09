@@ -58,9 +58,16 @@ const Navigation = () => {
             <Button variant="ghost" size="sm">
               <Search className="w-4 h-4" />
             </Button>
-            <Button variant="ghost" size="sm">
-              <ShoppingBag className="w-4 h-4" />
-            </Button>
+            <CartDrawer>
+              <Button variant="ghost" size="sm" className="relative">
+                <ShoppingBag className="w-4 h-4" />
+                {totalItems > 0 && (
+                  <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-red-500 text-white text-xs flex items-center justify-center p-0">
+                    {totalItems}
+                  </Badge>
+                )}
+              </Button>
+            </CartDrawer>
           </div>
 
           {/* Mobile Menu */}
