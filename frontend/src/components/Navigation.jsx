@@ -10,6 +10,7 @@ import { Menu, ShoppingBag, Search } from 'lucide-react';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { totalItems } = useCart();
 
   const navItems = [
     { name: 'Home', path: '/' },
