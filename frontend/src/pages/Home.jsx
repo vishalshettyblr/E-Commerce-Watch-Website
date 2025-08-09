@@ -36,9 +36,11 @@ const Home = () => {
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
-                <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
-                  Learn More
-                </Button>
+                <Link to="/about">
+                  <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
+                    Learn More
+                  </Button>
+                </Link>
               </div>
             </div>
             
