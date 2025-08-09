@@ -131,7 +131,9 @@ const Home = () => {
                   </div>
                   
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{product.name}</h3>
+                    <Link to={`/product/${product.id}`}>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2 hover:text-gray-700 transition-colors duration-200">{product.name}</h3>
+                    </Link>
                     <p className="text-gray-600 mb-4">{product.model}</p>
                     <div className="flex items-center justify-between mb-6">
                       <div className="flex items-center space-x-2">
