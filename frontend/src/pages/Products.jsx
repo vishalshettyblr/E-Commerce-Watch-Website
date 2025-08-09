@@ -134,7 +134,9 @@ const Products = () => {
                 <div className="p-6">
                   {/* Product Info */}
                   <div className="mb-4">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-1">{product.name}</h3>
+                    <Link to={`/product/${product.id}`}>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-1 hover:text-gray-700 transition-colors duration-200">{product.name}</h3>
+                    </Link>
                     <p className="text-gray-600 text-sm mb-2">{product.model}</p>
                     <p className="text-gray-700 text-sm line-clamp-2">{product.description}</p>
                   </div>
