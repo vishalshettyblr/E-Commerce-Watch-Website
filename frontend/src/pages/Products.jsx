@@ -11,6 +11,8 @@ import { Star, Filter, ShoppingCart, Heart } from 'lucide-react';
 const Products = () => {
   const [sortBy, setSortBy] = useState('name');
   const [filterBy, setFilterBy] = useState('all');
+  const { addToCart } = useCart();
+  const [addedItems, setAddedItems] = useState({});
 
   const filteredProducts = appleWatches.filter(product => {
     if (filterBy === 'all') return true;
