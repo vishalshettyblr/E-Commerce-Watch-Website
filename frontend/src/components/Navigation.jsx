@@ -108,10 +108,17 @@ const Navigation = () => {
                     <Search className="w-4 h-4 mr-2" />
                     Search
                   </Button>
-                  <Button variant="ghost" size="sm">
-                    <ShoppingBag className="w-4 h-4 mr-2" />
-                    Cart
-                  </Button>
+                  <CartDrawer>
+                    <Button variant="ghost" size="sm" className="relative">
+                      <ShoppingBag className="w-4 h-4 mr-2" />
+                      Cart
+                      {totalItems > 0 && (
+                        <Badge className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 text-white text-xs flex items-center justify-center p-0">
+                          {totalItems}
+                        </Badge>
+                      )}
+                    </Button>
+                  </CartDrawer>
                 </div>
               </div>
             </SheetContent>
